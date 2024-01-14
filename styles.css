@@ -1,0 +1,195 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+
+    /* border: 1px solid black; */
+}
+
+body, html {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+.main-container {
+    flex-grow: 1;
+
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: 1fr 4fr;
+    grid-template-areas: 
+    "sidebar header"
+    "sidebar main-content";
+}
+
+
+/* 
+--------------
+************** HEADER 
+--------------
+*/
+
+.header {
+    grid-area: header;
+}
+
+
+
+/* 
+--------------
+************** SIDEBAR 
+--------------
+*/
+
+
+.sidebar {
+    grid-area: sidebar;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    background-color: #1992D4;
+    color: #FFFFFF;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.dashboard {
+    display: flex;
+    padding-left: 1rem;
+    gap: 0.5rem;
+    align-items: center;
+    font-size: 1.3rem;
+    margin-top: 1rem;
+}
+
+.nav-options {
+    display: flex;
+    flex-direction: column;
+    padding-left: 2rem;
+    gap: 0.5rem;
+}
+
+
+.more-options {
+    display: flex;
+    flex-direction: column;
+    padding-left: 2rem;
+    gap: 0.5rem;
+}
+
+
+.nav-options > div, .more-options > div {
+    display: flex;
+    gap: 1rem;
+    vertical-align: baseline;
+}
+
+
+/* 
+--------------
+************** MAIN-CONTENT 
+--------------
+*/
+
+
+.main-content {
+    grid-area: main-content;
+    background-color: #E2E8F0;
+    display: grid;
+
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 1fr 1fr;
+
+    grid-template-areas: 
+    "project-container announcements-container"
+    "project-container trending-container";
+}
+
+.project-container{
+    grid-area: project-container;
+    display: flex;
+    flex-direction: column;
+}
+
+.projects-title {
+    height: 7%;
+    color: black;
+    font-size: 1.5rem;
+    padding-left: 1rem;
+    font-weight: bold;
+}
+
+.projects {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    flex-grow: 1;
+    padding: 0 2rem 2rem 2rem;
+    gap: 2rem;
+}
+
+[class^=project-card] {
+    border: 1px solid #FFFFFF;
+    border-radius: 0.5rem;
+    border-left: 0.4rem solid #F0B429;
+    padding: 0.8rem;
+    background-color: #FFFFFF;
+}
+
+.project-title {
+    font-size: 1rem;
+    color: #222;
+    font-weight: bold;
+}
+
+.project-description {
+
+    font-size: 0.8rem;
+    color: #333;
+}
+
+.project-links {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.8rem;
+    padding-top: 0.4rem;
+}
+
+.announcements-container {
+    grid-area: announcements-container;
+}
+
+.trending-container {
+    grid-area: trending-container;
+}
+
+
+
+/* 
+--------------
+************** SVGs 
+--------------
+*/
+
+.nav-options svg, .more-options svg {
+    fill: #FFFFFF;
+    height: 1.5rem;
+    vertical-align: baseline;
+}
+
+.dashboard-icon {
+    height: 3rem;
+    fill: #FFFFFF;
+    vertical-align: baseline;
+}
+
+
+[class^=project-card]  svg {
+    fill: #111;
+    height: 1.5rem;
+    vertical-align: baseline;
+}
